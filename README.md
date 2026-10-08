@@ -8,6 +8,20 @@ behavior.
 The menu bar app requires macOS 13 or later. The app settings source of truth is
 [`tray/Sources/LocalJevTray/ServerSettings.swift`](tray/Sources/LocalJevTray/ServerSettings.swift).
 
+## oMLX upstream requirement
+
+The app includes the LocalJev server, but it does not include an inference model
+or an oMLX server. Configure and start oMLX before launching the app.
+
+1. Install and configure oMLX with the model you want to use.
+2. Start the oMLX OpenAI-compatible server.
+3. Set the app's Upstream URL, Upstream API key, and Upstream model to match the
+   running oMLX service.
+
+The default Upstream URL is `http://127.0.0.1:8000`. The LocalJev `/health`
+check only confirms that the bundled server is running. The `/ready` check
+requires the configured oMLX service and model to be available.
+
 ## App settings
 
 The bundled app starts with these values:
