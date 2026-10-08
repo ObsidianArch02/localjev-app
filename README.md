@@ -64,6 +64,34 @@ available:
 curl http://127.0.0.1:8080/ready
 ```
 
+## Build the macOS menu bar app
+
+The repository includes a macOS 13+ menu bar app that packages the LocalJev
+server as a bundled executable. Build it with:
+
+```sh
+make app
+```
+
+The output is `tray/dist/LocalJev.app`. Copy the app bundle to `/Applications`
+or open it directly from the `tray/dist` directory.
+
+The app settings use these defaults:
+
+| Setting | Default |
+|---|---|
+| LocalJev port | `8080` |
+| Upstream URL | `http://127.0.0.1:8000` |
+| Upstream API key | empty |
+| Upstream model | `clef-flash` |
+| LocalJev API key | empty |
+| Start the server when the app launches | enabled |
+
+On the first launch, the app can seed these settings from
+`LOCALJEV_PORT`, `LOCALJEV_UPSTREAM`, `LOCALJEV_UPSTREAM_API_KEY`,
+`LOCALJEV_UPSTREAM_MODEL`, and `LOCALJEV_API_KEY`. Later launches use the
+saved settings from macOS UserDefaults.
+
 Make a decision:
 
 ```bash

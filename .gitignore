@@ -7,3 +7,6 @@ eval/runs/
 .DS_Store
 coverage/
 dist/
+tray/.build/
+tray/localjev-bin
+*.bun-build

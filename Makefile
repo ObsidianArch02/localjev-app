@@ -1,4 +1,4 @@
-.PHONY: run dev test typecheck smoke
+.PHONY: run dev test typecheck smoke app
 
 run:
 	bun run start
@@ -14,3 +14,6 @@ typecheck:
 
 smoke:
 	bun run smoke
+
+app:
+	./tray/build.sh
